@@ -7,14 +7,17 @@ program Main;
     https://emiliodevesa.wordpress.com/
 }
 
+import
+    StandardInput;
+    StandardOutput;
 
 {** Output text user interface operations **}
 
 { Clears screen using ANSI escape code }
 procedure ClearScreen;
 begin
-    write(#27'[2J');  (* Clear screen *)
-    write(#27'[H');   (* Move cursor to top-left *)
+    write(chr(27)+'[2J');  (* Clear screen *)
+    write(chr(27)+'[H');   (* Move cursor to top-left *)
 end;
 
 { Pause and wait for user to press ENTER }
