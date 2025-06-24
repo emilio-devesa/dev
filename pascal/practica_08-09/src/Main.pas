@@ -10,6 +10,8 @@ program Main;
 import
     StandardInput;
     StandardOutput;
+    ConfigurationController qualified;
+
 
 {** Output text user interface operations **}
 
@@ -35,6 +37,7 @@ function mainMenu: integer;
 var option: integer;
 begin
     repeat
+        writeln;
         writeln('MAIN MENU');
         writeln('1. New student');
         writeln('2. Update student');
@@ -54,6 +57,7 @@ function submenuLists: integer;
 var option: integer;
 begin
     repeat
+        writeln;
         writeln('LISTS:');
         writeln('1. List students alphabetically');
         writeln('2. List students alphabetically and their season grades');
@@ -82,7 +86,7 @@ begin
                 3: { List students and their season grades descendentally sorted };
                 0: { Return };
             end;
-        5: { Change Configuration };
+        5: ConfigurationController.change;
         0: { Exit };
     end;
     start := option;
@@ -90,6 +94,10 @@ end;
 
 begin
     ClearScreen;
+    writeln('============================');
+    writeln('  STUDENT GRADE MANAGER');
+    writeln('============================');
+    ConfigurationController.load;
 	repeat
     until (start(mainMenu) = 0);
     WaitForEnter;
