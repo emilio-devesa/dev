@@ -10,25 +10,9 @@ program Main;
 import
     StandardInput;
     StandardOutput;
+    Shared;
     ConfigurationController qualified;
-
-
-{** Output text user interface operations **}
-
-{ Clears screen using ANSI escape code }
-procedure ClearScreen;
-begin
-    write(chr(27)+'[2J');  (* Clear screen *)
-    write(chr(27)+'[H');   (* Move cursor to top-left *)
-end;
-
-{ Pause and wait for user to press ENTER }
-procedure WaitForEnter;
-begin
-    writeln;
-    write('Press ENTER to continue...');
-    readln;
-end;
+    StudentController qualified;
 
 
 {** Menus' logics **}
@@ -77,7 +61,7 @@ end;
 function start(option: integer): integer;
 begin
     case (option) of
-        1: { New Student };
+        1: StudentController.newStudent { New Student };
         2: { Update Student };
         3: { Update grades };
         4: case (submenuLists) of
