@@ -13,7 +13,10 @@ module Types;
 export Types = (
         tPersonalInfo,
         tStudent,
-        tStudentList
+        tStudentList,
+        tExamPeriod,
+        tGrade,
+        tExamRecord
 );
 
 
@@ -26,8 +29,31 @@ type    tPersonalInfo = String (50);
 		end;
         
         tStudentList = record
-            list: array [1..100] of tStudent;
+            list: array [1 .. 100] of tStudent;
             count: integer value 0;
+        end;
+
+        tGrade = record
+            val: real value 0.0;
+            passedIn: char value ' ';  { 'f', 'j', 's', 'd', ' ' }
+        end;
+
+        tExamRecord = record
+            theory: tGrade;
+            practice: tGrade;
+            global: real value 0.0;
+        end;
+
+        tExamPeriod = (epFebruary, epJune, epSeptember, epDecember);
+
+        tStudentGrades = record
+            login: tPersonalInfo;
+            grades: array [tExamPeriod] of tExamRecord;
+        end;
+
+        tGradesList = record
+            list: array [1 .. 100] of tStudentGrades;
+            count: integer value 0
         end;
 
 
