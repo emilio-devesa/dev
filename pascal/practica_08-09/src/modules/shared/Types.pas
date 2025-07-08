@@ -10,13 +10,13 @@ module Types;
     Provides common types
 }
 
-export Types = (
-        tPersonalInfo,
-        tStudent,
-        tStudentList,
-        tExamPeriod,
-        tGrade,
-        tExamRecord
+export  Types = (
+            tPersonalInfo,
+            tStudent,
+            tStudentList,
+            tExamPeriod,
+            tGrade,
+            tExamRecord
 );
 
 

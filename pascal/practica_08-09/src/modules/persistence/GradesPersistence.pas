@@ -11,8 +11,8 @@ module GradesPersistence;
 }
 
 export  GradesPersistence = (
-        loadFromFile,
-        saveToFile
+            loadFromFile,
+            saveToFile
 );
 
 import  StandardInput;

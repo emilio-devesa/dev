@@ -7,18 +7,40 @@ module ConfigurationController;
     https://emiliodevesa.wordpress.com/
 
     ConfigurationController.pas
-    Provides a controller for persistent configuration values
+    Provides a controller for configuration values
 }
 
-export  ConfigurationController = (change, load);
+export  ConfigurationController = (
+            load,
+            save,
+            change
+);
 
-import  StandardInput; StandardOutput;
+import  StandardInput;
+        StandardOutput;
         ConfigurationModel qualified;
         ConfigurationView qualified;
+        ConfigurationPersistence qualified;
 
-procedure change;
 procedure load;
+procedure save;
+procedure change;
 
+end;
+
+
+procedure load;
+begin
+    if (ConfigurationPersistence.loadFromFile)
+    then ConfigurationView.show(ConfigurationModel.getSaveTheory, ConfigurationModel.getSavePractice)
+    else change;
+end;
+
+procedure save;
+begin
+    if (ConfigurationPersistence.saveToFile)
+    then writeln('Saved preferences in configuration file')
+    else writeln('ERROR: Can´t save preferences in configuration file');
 end;
 
 procedure change;
@@ -27,18 +49,8 @@ begin
     ConfigurationView.askToSaveGrades(saveTheory, savePractice);
     ConfigurationModel.setSaveTheory(saveTheory);
     ConfigurationModel.setSavePractice(savePractice);
-    if (ConfigurationModel.saveToFile)
-    then writeln('Saved preferences in configuration file')
-    else writeln('ERROR: Can´t save preferences in configuration file');
+    save;
 end;
 
-procedure load;
-begin
-    if (ConfigurationModel.loadFromFile)
-    then begin
-        ConfigurationView.show(ConfigurationModel.getSaveTheory, ConfigurationModel.getSavePractice);
-    end
-    else change;
-end;
 
 end.

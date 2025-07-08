@@ -11,9 +11,9 @@ module StudentController;
 }
 
 export	StudentController = (
-        loadStudents,
-        saveStudents,
-        newStudent
+            loadStudents,
+            saveStudents,
+            newStudent
 );
 
 import  StandardOutput;

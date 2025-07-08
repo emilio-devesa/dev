@@ -11,9 +11,9 @@ module Operations;
 }
 
 
-export Operations = (
-        ClearScreen,
-        WaitForEnter
+export  Operations = (
+            ClearScreen,
+            WaitForEnter
 );
 
 

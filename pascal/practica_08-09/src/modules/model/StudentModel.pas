@@ -11,18 +11,18 @@ module StudentModel;
 }
 
 export	StudentModel = (
-        setFirstName,
-        setLastName,
-        setLogin,
-        getFirstName,
-        getLastName,
-        getLogin,
-        add,
-        get,
-        find,
-        replace,
-        remove,
-        getCount
+            setFirstName,
+            setLastName,
+            setLogin,
+            getFirstName,
+            getLastName,
+            getLogin,
+            add,
+            get,
+            find,
+            replace,
+            remove,
+            getCount
 );
 
 import  Types qualified;

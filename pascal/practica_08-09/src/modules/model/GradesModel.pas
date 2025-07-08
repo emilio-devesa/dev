@@ -11,14 +11,14 @@ module GradesModel;
 }
 
 export	GradesModel = (
-        setLogin,
-        getLogin,
-        add,
-        get,
-        find,
-        replace,
-        remove,
-        getCount
+            setLogin,
+            getLogin,
+            add,
+            get,
+            find,
+            replace,
+            remove,
+            getCount
 );
 
 import  Types qualified;
