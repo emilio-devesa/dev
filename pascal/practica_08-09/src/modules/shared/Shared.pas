@@ -39,7 +39,6 @@ end;
 { Pause and wait for user to press ENTER }
 procedure WaitForEnter;
 begin
-    writeln;
     write('Press ENTER to continue...');
     readln;
 end;
