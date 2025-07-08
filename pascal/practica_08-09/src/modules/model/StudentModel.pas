@@ -25,21 +25,21 @@ export	StudentModel = (
         getCount
 );
 
-import  Types;
+import  Types qualified;
 
-var     studentList: tStudentList;
+var     studentList: Types.tStudentList;
 
-procedure setFirstName(var s: tStudent; n: tPersonalInfo);
-procedure setLastName(var s: tStudent; n: tPersonalInfo);
-procedure setLogin(var s: tStudent; l: tPersonalInfo);
-function getFirstName(s: tStudent): tPersonalInfo;
-function getLastName(s: tStudent): tPersonalInfo;
-function getLogin(s: tStudent): tPersonalInfo;
-function add(student: tStudent): boolean;
-function get(i: integer; var s: tStudent): boolean;
-function find(login: tPersonalInfo): integer;
-function replace(login: tPersonalInfo; student: tStudent): boolean;
-function remove(login: tPersonalInfo): boolean;
+procedure setFirstName(var s: Types.tStudent; n: Types.tPersonalInfo);
+procedure setLastName(var s: Types.tStudent; n: Types.tPersonalInfo);
+procedure setLogin(var s: Types.tStudent; l: Types.tPersonalInfo);
+function getFirstName(s: Types.tStudent): Types.tPersonalInfo;
+function getLastName(s: Types.tStudent): Types.tPersonalInfo;
+function getLogin(s: Types.tStudent): Types.tPersonalInfo;
+function add(student: Types.tStudent): boolean;
+function get(i: integer; var s: Types.tStudent): boolean;
+function find(login: Types.tPersonalInfo): integer;
+function replace(login: Types.tPersonalInfo; student: Types.tStudent): boolean;
+function remove(login: Types.tPersonalInfo): boolean;
 function getCount: integer;
 
 
