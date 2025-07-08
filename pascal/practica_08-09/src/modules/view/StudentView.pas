@@ -18,11 +18,11 @@ export	StudentView = (
 
 import  StandardInput;
         StandardOutput;
-        Shared;
+        Types qualified;
 
-procedure getFirstName(var s: tPersonalInfo);
-procedure getLastName(var s: tPersonalInfo);
-procedure getLogin(var s: tPersonalInfo);
+procedure getFirstName(var s: Types.tPersonalInfo);
+procedure getLastName(var s: Types.tPersonalInfo);
+procedure getLogin(var s: Types.tPersonalInfo);
 
 end;
 
@@ -44,5 +44,6 @@ begin
     write('Enter login: ');
     readln(s);
 end;
+
 
 end.

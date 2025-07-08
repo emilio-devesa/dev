@@ -17,13 +17,13 @@ export  StudentPersistence = (
 
 import  StandardInput;
         StandardOutput;
-        Shared;
+        Types qualified;
         StudentModel qualified;
 
 
 const   dataFileName = '.students';
 
-type    tFile = bindable file of StudentModel.tStudent;
+type    tFile = bindable file of Types.tStudent;
 
 function loadFromFile: boolean;
 function saveToFile: boolean;
@@ -56,7 +56,7 @@ end;
 
 function loadFromFile;
 var f: tFile;
-    s: StudentModel.tStudent;
+    s: Types.tStudent;
 begin
     if fileExists(f, dataFileName) and_then fileIsBound(f, dataFileName)
     then begin
@@ -74,7 +74,7 @@ end;
 function saveToFile;
 var f: tFile;
     i, n: integer;
-    s: StudentModel.tStudent;
+    s: Types.tStudent;
     success: boolean value true;
 begin
     if fileIsBound(f, dataFileName)

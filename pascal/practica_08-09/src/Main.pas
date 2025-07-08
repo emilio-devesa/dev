@@ -10,7 +10,7 @@ program Main;
 import
     StandardInput;
     StandardOutput;
-    Shared;
+    Operations qualified;
     ConfigurationController qualified;
     StudentController qualified;
 
@@ -77,7 +77,7 @@ begin
 end;
 
 begin
-    ClearScreen;
+    Operations.ClearScreen;
     writeln('============================');
     writeln('  STUDENT GRADE MANAGER');
     writeln('============================');
@@ -87,6 +87,6 @@ begin
     until (start(mainMenu) = 0);
     writeln;
     StudentController.saveStudents;
-    WaitForEnter;
-    ClearScreen;
+    Operations.WaitForEnter;
+    Operations.ClearScreen;
 end.

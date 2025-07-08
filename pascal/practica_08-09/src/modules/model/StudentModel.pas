@@ -11,23 +11,21 @@ module StudentModel;
 }
 
 export	StudentModel = (
-        tStudent,
-        setFirstName, setLastName, setLogin, 
-        getFirstName, getLastName, getLogin,
-        add, get, find, replace, remove, getCount
+        setFirstName,
+        setLastName,
+        setLogin,
+        getFirstName,
+        getLastName,
+        getLogin,
+        add,
+        get,
+        find,
+        replace,
+        remove,
+        getCount
 );
 
-import  Shared;
-
-type    tStudent = record
-			firstName: tPersonalInfo;
-			lastName: tPersonalInfo;
-			login: tPersonalInfo;
-		end;
-        tStudentList = record
-            list: array [1..100] of tStudent;
-            count: integer value 0;
-        end;
+import  Types;
 
 var     studentList: tStudentList;
 
@@ -43,6 +41,7 @@ function find(login: tPersonalInfo): integer;
 function replace(login: tPersonalInfo; student: tStudent): boolean;
 function remove(login: tPersonalInfo): boolean;
 function getCount: integer;
+
 
 end;
 

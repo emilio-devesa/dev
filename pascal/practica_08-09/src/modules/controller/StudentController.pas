@@ -17,7 +17,7 @@ export	StudentController = (
 );
 
 import  StandardOutput;
-        Shared;
+        Types qualified;
         StudentModel qualified;
         StudentView qualified;
         StudentPersistence qualified;
@@ -43,7 +43,7 @@ begin
 end;
 
 procedure newStudent;
-var student: StudentModel.tStudent; s: tPersonalInfo;
+var student: Types.tStudent; s: Types.tPersonalInfo;
 begin
     StudentView.getFirstName(s);
     StudentModel.setFirstName(student, s);

@@ -1,4 +1,4 @@
-module Shared;
+module Operations;
 {   Práctica 2008-2009
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
@@ -6,23 +6,24 @@ module Shared;
     Emilio Devesa
     https://emiliodevesa.wordpress.com/
 
-    Shared.pas
-    Provides common types and operations to different elements of the program architecture
+    Operations.pas
+    Provides common operations
 }
 
-export Shared = (
-        tPersonalInfo,
+
+export Operations = (
         ClearScreen,
         WaitForEnter
 );
 
+
 import  StandardInput;
         StandardOutput;
 
-type    tPersonalInfo = String (50);
 
 procedure ClearScreen;
 procedure WaitForEnter;
+
 
 end;
 
