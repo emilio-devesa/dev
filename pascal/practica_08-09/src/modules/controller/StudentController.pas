@@ -11,6 +11,8 @@ module StudentController;
 }
 
 export	StudentController = (
+        loadStudents,
+        saveStudents,
         newStudent
 );
 
@@ -18,11 +20,27 @@ import  StandardOutput;
         Shared;
         StudentModel qualified;
         StudentView qualified;
-        
+        StudentPersistence qualified;
+
+procedure loadStudents;
+procedure saveStudents;        
 procedure newStudent;
 
 end;
 
+procedure loadStudents;
+begin
+    if StudentPersistence.loadFromFile
+    then writeln('Data loaded successfully')
+    else writeln('Data could not be loaded');
+end;
+
+procedure saveStudents;
+begin
+    if StudentPersistence.saveToFile
+    then writeln('Data saved successfully')
+    else writeln('Data could not be saved');
+end;
 
 procedure newStudent;
 var student: StudentModel.tStudent; s: tPersonalInfo;
@@ -33,8 +51,8 @@ begin
     StudentModel.setLastName(student, s);
     StudentView.getLogin(s);
     StudentModel.setLogin(student, s);
-    if StudentModel.add(student) and_then (StudentModel.get(s, student))
-    then writeln('Student added successfully: ', StudentModel.getFirstName(student))
+    if StudentModel.add(student)
+    then writeln('Student added successfully')
     else writeln('Could not add new student');
 end;
 

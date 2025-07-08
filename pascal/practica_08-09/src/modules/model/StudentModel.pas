@@ -14,20 +14,19 @@ export	StudentModel = (
         tStudent,
         setFirstName, setLastName, setLogin, 
         getFirstName, getLastName, getLogin,
-        add, get, find, replace, remove
+        add, get, find, replace, remove, getCount
 );
 
 import  Shared;
 
-type	{tPersonalInfo = String (50);}
-		tStudent = record
+type    tStudent = record
 			firstName: tPersonalInfo;
 			lastName: tPersonalInfo;
 			login: tPersonalInfo;
 		end;
         tStudentList = record
             list: array [1..100] of tStudent;
-            count: 0 .. 100;
+            count: integer value 0;
         end;
 
 var     studentList: tStudentList;
@@ -39,10 +38,11 @@ function getFirstName(s: tStudent): tPersonalInfo;
 function getLastName(s: tStudent): tPersonalInfo;
 function getLogin(s: tStudent): tPersonalInfo;
 function add(student: tStudent): boolean;
-function get(l: tPersonalInfo; var s: tStudent): boolean;
+function get(i: integer; var s: tStudent): boolean;
 function find(login: tPersonalInfo): integer;
 function replace(login: tPersonalInfo; student: tStudent): boolean;
 function remove(login: tPersonalInfo): boolean;
+function getCount: integer;
 
 end;
 
@@ -84,23 +84,21 @@ function add;
 begin
     if (studentList.count < 100)
     then begin
-        studentList.list[studentList.count + 1] := student;
         studentList.count := studentList.count + 1;
+        studentList.list[studentList.count] := student;
         add := true;
     end
     else add := false;
 end;
 
 function get;
-var i: integer;
 begin
-    get := false;
-    i := find(l);
     if (i>0) and_then (i <= studentList.count)
     then begin
         s := studentList.list[i];
         get := true;
     end
+    else get := false;;
 end;
 
 function find;
@@ -142,6 +140,11 @@ begin
         studentList.count := studentList.count - 1;
         remove := true;
     end;
+end;
+
+function getCount;
+begin
+    getCount := studentList.count;
 end;
 
 

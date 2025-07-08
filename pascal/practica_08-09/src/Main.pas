@@ -82,7 +82,11 @@ begin
     writeln('  STUDENT GRADE MANAGER');
     writeln('============================');
     ConfigurationController.load;
+    StudentController.loadStudents;
 	repeat
     until (start(mainMenu) = 0);
+    writeln;
+    StudentController.saveStudents;
     WaitForEnter;
+    ClearScreen;
 end.
