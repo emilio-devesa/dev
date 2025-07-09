@@ -17,11 +17,13 @@ export	StudentController = (
 );
 
 import  StandardOutput;
-        Types qualified;
+        Definitions;
         StudentModel qualified;
         StudentListModel qualified;
         StudentView qualified;
         StudentPersistence qualified;
+
+var     studentList: tStudentList;
 
 procedure loadStudents;
 procedure saveStudents;        
@@ -31,20 +33,20 @@ end;
 
 procedure loadStudents;
 begin
-    if StudentPersistence.loadFromFile
+    if StudentPersistence.loadFromFile(studentList)
     then writeln('Data loaded successfully')
     else writeln('Data could not be loaded');
 end;
 
 procedure saveStudents;
 begin
-    if StudentPersistence.saveToFile
+    if StudentPersistence.saveToFile(studentList)
     then writeln('Data saved successfully')
     else writeln('Data could not be saved');
 end;
 
 procedure newStudent;
-var student: Types.tStudent; s: Types.tPersonalInfo;
+var student: tStudent; s: tPersonalInfo;
 begin
     StudentView.getFirstName(s);
     StudentModel.setFirstName(student, s);
@@ -52,7 +54,7 @@ begin
     StudentModel.setLastName(student, s);
     StudentView.getLogin(s);
     StudentModel.setLogin(student, s);
-    if StudentListModel.add(student)
+    if StudentListModel.add(studentList, student)
     then writeln('Student added successfully')
     else writeln('Could not add new student');
 end;

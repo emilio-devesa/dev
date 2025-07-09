@@ -19,14 +19,14 @@ export	StudentModel = (
             getLogin
 );
 
-import  Types qualified;
+import  Definitions;
 
-procedure setFirstName(var s: Types.tStudent; n: Types.tPersonalInfo);
-procedure setLastName(var s: Types.tStudent; n: Types.tPersonalInfo);
-procedure setLogin(var s: Types.tStudent; l: Types.tPersonalInfo);
-function getFirstName(s: Types.tStudent): Types.tPersonalInfo;
-function getLastName(s: Types.tStudent): Types.tPersonalInfo;
-function getLogin(s: Types.tStudent): Types.tPersonalInfo;
+procedure setFirstName(var s: tStudent; n: tPersonalInfo);
+procedure setLastName(var s: tStudent; n: tPersonalInfo);
+procedure setLogin(var s: tStudent; l: tPersonalInfo);
+function getFirstName(s: tStudent): tPersonalInfo;
+function getLastName(s: tStudent): tPersonalInfo;
+function getLogin(s: tStudent): tPersonalInfo;
 
 
 end;

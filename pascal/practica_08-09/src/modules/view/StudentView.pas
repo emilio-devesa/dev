@@ -11,18 +11,20 @@ module StudentView;
 }
 
 export	StudentView = (
-        getFirstName,
-        getLastName,
-        getLogin
+            getFirstName,
+            getLastName,
+            getLogin,
+            print
 );
 
 import  StandardInput;
         StandardOutput;
-        Types qualified;
+        Definitions;
 
-procedure getFirstName(var s: Types.tPersonalInfo);
-procedure getLastName(var s: Types.tPersonalInfo);
-procedure getLogin(var s: Types.tPersonalInfo);
+procedure getFirstName(var s: tPersonalInfo);
+procedure getLastName(var s: tPersonalInfo);
+procedure getLogin(var s: tPersonalInfo);
+procedure print(fn, ln, lg: tPersonalInfo);
 
 end;
 
@@ -45,5 +47,9 @@ begin
     readln(s);
 end;
 
+procedure print;
+begin
+    writeln(fn, ' ', ln, ' - ',lg);
+end;
 
 end.

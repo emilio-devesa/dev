@@ -13,23 +13,22 @@ module StudentListModel;
 export	StudentListModel = (
             add,
             get,
-            find,
-            replace,
+            put,
             remove,
+            find,
+            clone,
             getCount
 );
 
-import  Types qualified;
+import  Definitions;
 
-var     studentList: Types.tStudentList;
-
-function add(student: Types.tStudent): boolean;
-function get(i: integer; var s: Types.tStudent): boolean;
-function find(login: Types.tPersonalInfo): integer;
-function replace(i: integer; student: Types.tStudent): boolean;
-function remove(login: Types.tPersonalInfo): boolean;
-procedure clone(var origin, target: Types.tStudentList);
-function getCount: integer;
+function add (var list: tStudentList; student: tStudent): boolean;
+function get (var list: tStudentList; i: integer; var s: tStudent): boolean;
+function put (var list: tStudentList; i: integer; student: tStudent): boolean;
+function remove (var list: tStudentList; login: tPersonalInfo): boolean;
+function find (var list: tStudentList; login: tPersonalInfo): integer;
+procedure clone (var origin, target: tStudentList);
+function getCount(var list: tStudentList): integer;
 
 
 end;
@@ -37,10 +36,10 @@ end;
 
 function add;
 begin
-    if (studentList.count < 100)
+    if (list.count < MAX_ITEMS)
     then begin
-        studentList.count := studentList.count + 1;
-        studentList.list[studentList.count] := student;
+        list.count := list.count + 1;
+        list.item[list.count] := student;
         add := true;
     end
     else add := false;
@@ -48,34 +47,21 @@ end;
 
 function get;
 begin
-    if (i>0) and_then (i <= studentList.count)
+    if (i > 0) and_then (i <= list.count)
     then begin
-        s := studentList.list[i];
+        s := list.item[i];
         get := true;
     end
     else get := false;;
 end;
 
-function find;
-var i: integer;
+function put;
 begin
-    find := 0;
-    if studentList.count > 0
+    put := false;
+    if (i > 0) and (i <= list.count)
     then begin
-        for i := 1 to studentList.count do begin
-            if studentList.list[i].login = login
-            then find := i;
-        end;
-    end
-end;
-
-function replace;
-begin
-    replace := false;
-    if (i > 0) and (i <= studentList.count)
-    then begin
-        studentList.list[i] := student;
-        replace := true;
+        list.item[i] := student;
+        put := true;
     end;
 end;
 
@@ -83,16 +69,29 @@ function remove;
 var i: integer;
 begin
     remove := false;
-    i := find(login);
+    i := find(list, login);
     if i > 0
     then begin
-        while (i < studentList.count) do begin
-            studentList.list[i] := studentList.list[i+1];
+        while (i < list.count) do begin
+            list.item[i] := list.item[i+1];
             i := i + 1;
         end;
-        studentList.count := studentList.count - 1;
+        list.count := list.count - 1;
         remove := true;
     end;
+end;
+
+function find;
+var i: integer;
+begin
+    find := 0;
+    if list.count > 0
+    then begin
+        for i := 1 to list.count do begin
+            if list.item[i].login = login
+            then find := i;
+        end;
+    end
 end;
 
 procedure clone;
@@ -100,12 +99,12 @@ var i: integer;
 begin
     target.count := origin.count;
     if origin.count > 0
-    then for i := 1 to origin.count do target.list[i] := origin.list[i];
+    then for i := 1 to origin.count do target.item[i] := origin.item[i];
 end;
 
 function getCount;
 begin
-    getCount := studentList.count;
+    getCount := list.count;
 end;
 
 

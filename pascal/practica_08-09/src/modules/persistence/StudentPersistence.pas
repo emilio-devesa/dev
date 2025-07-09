@@ -17,17 +17,17 @@ export  StudentPersistence = (
 
 import  StandardInput;
         StandardOutput;
-        Types qualified;
+        Definitions;
         StudentModel qualified;
         StudentListModel qualified;
 
 
 const   dataFileName = '.students';
 
-type    tFile = bindable file of Types.tStudent;
+type    tFile = bindable file of tStudent;
 
-function loadFromFile: boolean;
-function saveToFile: boolean;
+function loadFromFile (var list: tStudentList): boolean;
+function saveToFile (var list: tStudentList): boolean;
 
 end;
 
@@ -57,7 +57,7 @@ end;
 
 function loadFromFile;
 var f: tFile;
-    s: Types.tStudent;
+    s: tStudent;
 begin
     if fileExists(f, dataFileName) and_then fileIsBound(f, dataFileName)
     then begin
@@ -65,7 +65,7 @@ begin
         loadFromFile := true;
         while not eof(f) do begin
             read(f, s);
-            if not StudentListModel.add(s)
+            if not StudentListModel.add(list, s)
             then loadFromFile := false;
         end;
     end
@@ -75,15 +75,15 @@ end;
 function saveToFile;
 var f: tFile;
     i, n: integer;
-    s: Types.tStudent;
+    s: tStudent;
     success: boolean value true;
 begin
     if fileIsBound(f, dataFileName)
     then begin
         rewrite(f);
-        n := StudentListModel.getCount;
+        n := StudentListModel.getCount(list);
         for i := 1 to n do begin
-            success := success and StudentListModel.get(i, s);
+            success := success and StudentListModel.get(list, i, s);
             write(f, s);
         end;
         saveToFile := success;
