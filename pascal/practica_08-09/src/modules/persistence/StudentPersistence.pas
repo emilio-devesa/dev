@@ -19,6 +19,7 @@ import  StandardInput;
         StandardOutput;
         Types qualified;
         StudentModel qualified;
+        StudentListModel qualified;
 
 
 const   dataFileName = '.students';
@@ -64,7 +65,7 @@ begin
         loadFromFile := true;
         while not eof(f) do begin
             read(f, s);
-            if not StudentModel.add(s)
+            if not StudentListModel.add(s)
             then loadFromFile := false;
         end;
     end
@@ -80,9 +81,9 @@ begin
     if fileIsBound(f, dataFileName)
     then begin
         rewrite(f);
-        n := StudentModel.getCount;
+        n := StudentListModel.getCount;
         for i := 1 to n do begin
-            success := success and StudentModel.get(i, s);
+            success := success and StudentListModel.get(i, s);
             write(f, s);
         end;
         saveToFile := success;

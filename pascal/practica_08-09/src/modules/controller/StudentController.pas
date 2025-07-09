@@ -19,6 +19,7 @@ export	StudentController = (
 import  StandardOutput;
         Types qualified;
         StudentModel qualified;
+        StudentListModel qualified;
         StudentView qualified;
         StudentPersistence qualified;
 
@@ -51,7 +52,7 @@ begin
     StudentModel.setLastName(student, s);
     StudentView.getLogin(s);
     StudentModel.setLogin(student, s);
-    if StudentModel.add(student)
+    if StudentListModel.add(student)
     then writeln('Student added successfully')
     else writeln('Could not add new student');
 end;
