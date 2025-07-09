@@ -1,4 +1,4 @@
-module Types;
+module Definitions;
 {   Práctica 2008-2009
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
@@ -6,11 +6,12 @@ module Types;
     Emilio Devesa
     https://emiliodevesa.wordpress.com/
 
-    Types.pas
-    Provides common types
+    Definitions.pas
+    Provides definitions for constants and types
 }
 
-export  Types = (
+export  Definitions = (
+            MAX_ITEMS,
             tPersonalInfo,
             tStudent,
             tStudentList,
@@ -19,6 +20,7 @@ export  Types = (
             tExamRecord
 );
 
+const   MAX_ITEMS = 100;
 
 type    tPersonalInfo = String (50);
 
@@ -29,7 +31,7 @@ type    tPersonalInfo = String (50);
 		end;
         
         tStudentList = record
-            list: array [1 .. 100] of tStudent;
+            item: array [1 .. MAX_ITEMS] of tStudent;
             count: integer value 0;
         end;
 
@@ -52,7 +54,7 @@ type    tPersonalInfo = String (50);
         end;
 
         tGradesList = record
-            list: array [1 .. 100] of tStudentGrades;
+            list: array [1 .. MAX_ITEMS] of tStudentGrades;
             count: integer value 0
         end;
 
