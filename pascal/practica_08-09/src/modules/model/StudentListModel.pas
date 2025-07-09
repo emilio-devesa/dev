@@ -26,8 +26,9 @@ var     studentList: Types.tStudentList;
 function add(student: Types.tStudent): boolean;
 function get(i: integer; var s: Types.tStudent): boolean;
 function find(login: Types.tPersonalInfo): integer;
-function replace(login: Types.tPersonalInfo; student: Types.tStudent): boolean;
+function replace(i: integer; student: Types.tStudent): boolean;
 function remove(login: Types.tPersonalInfo): boolean;
+procedure clone(var origin, target: Types.tStudentList);
 function getCount: integer;
 
 
@@ -69,11 +70,9 @@ begin
 end;
 
 function replace;
-var i: integer;
 begin
     replace := false;
-    i := find(login);
-    if i > 0
+    if (i > 0) and (i <= studentList.count)
     then begin
         studentList.list[i] := student;
         replace := true;
@@ -94,6 +93,14 @@ begin
         studentList.count := studentList.count - 1;
         remove := true;
     end;
+end;
+
+procedure clone;
+var i: integer;
+begin
+    target.count := origin.count;
+    if origin.count > 0
+    then for i := 1 to origin.count do target.list[i] := origin.list[i];
 end;
 
 function getCount;
