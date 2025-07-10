@@ -13,8 +13,7 @@ module Operations;
 
 export  Operations = (
             ClearScreen,
-            WaitForEnter,
-            getTerminalHeight
+            WaitForEnter
 );
 
 
@@ -24,8 +23,6 @@ import  StandardInput;
 
 procedure ClearScreen;
 procedure WaitForEnter;
-function getTerminalHeight: integer;
-
 end;
 
 
@@ -44,22 +41,5 @@ begin
     write('Press ENTER to continue...');
     readln;
 end;
-
-function getTerminalHeight;
-var f: text;
-    rows, cols: integer;
-    b: bindingtype;
-begin
-    unbind(f);
-    b := binding(f);
-    b.name := 'stty size |';
-    bind(f, b);
-    b := binding(f);
-    reset(f);
-    read(f, rows, cols);
-    getTerminalHeight := rows;
-end;
-
-
 
 end.

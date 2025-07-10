@@ -11,6 +11,7 @@ module StudentController;
 }
 
 export	StudentController = (
+            studentList,
             loadStudents,
             saveStudents,
             newStudent
