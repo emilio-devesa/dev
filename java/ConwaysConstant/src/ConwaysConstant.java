@@ -7,9 +7,8 @@ import java.util.Map;
 /**
  * Implementation of the Look-and-Say sequence
  * https://en.wikipedia.org/wiki/Look-and-say_sequence
- * https://emiliodevesa.wordpress.com/2023/08/22/look-and-say-conways-constant/
  *
- * @author Emilio Devesa (http://emiliodevesa.wordpress.com)
+ * @author Emilio Devesa
  * @version 0.1
  */
 public class ConwaysConstant {

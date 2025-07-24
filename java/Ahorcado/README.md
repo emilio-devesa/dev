@@ -7,7 +7,8 @@ _Queremos desarrollar un programa que ejecute el juego del ahorcado. En cada par
 Además, he introducido tres elementos extra: 
 - Un menú con tres opciones: jugar partida, ver estadísticas y salir. El programa se ejecuta hasta que el usuario selecciona la última opción. 
 - Las estadísticas de partidas ganadas y partidas perdidas. 
-- El programa cuenta con un conjunto de palabras para jugar. Se escogerán de forma aleatoria pero tratando de evitar que se produzcan repeticiones en la medida de lo posible. 
+- El programa cuenta con un conjunto de palabras para jugar. Se escogerán de forma aleatoria pero tratando de evitar que se produzcan repeticiones en la medida de lo posible.
+
 Vamos allá!
 
 **El programa principal**  
@@ -46,7 +47,11 @@ Y finalmente, vamos al método partida(), que es el que desarrolla el juego. Par
 
 ![](images/partida-e1612114113963.png) 
 
-He estructurado el método en cuatro bloques que son: 1. Preparación de las variables Solicito la palabra secreta al método nuevaPalabra(), creo un array de char palabra\[\] con la misma longitud para almacenar la letras que el jugador acierta y otro con el tamaño maxIntentos para las letras falladas vLetras\[\]. 2. Muestro el estado de la partida y los intentos restantes, y leo una letra. Si esa letra forma parte de palabraSecreta y no de palabra\[\] entonces la revelo. 3. Siempre que se haya acertado una letra, se compara palabraSecreta con palabra\[\] (podemos convertir el contenido del array a String con el método String.copyValueOf()). Si son iguales, la palabra ha sido revelada y ponemos fin a TRUE. Si no se ha acertado la letra, la apuntamos en vLetras y aumentamos el contador de fallos. 4. El último bloque verifica si la partida ha terminado porque la variable fin era TRUE, lo que significaría una victoria. Si hemos llegado hasta ahí y todavía vale false, es una derrota. Mostramos los mensajes adecuados y devolvemos el valor de fin.
+He estructurado el método en cuatro bloques que son:  
+1. Preparación de las variables Solicito la palabra secreta al método nuevaPalabra(), creo un array de char palabra\[\] con la misma longitud para almacenar la letras que el jugador acierta y otro con el tamaño maxIntentos para las letras falladas vLetras\[\]. 
+2. Muestro el estado de la partida y los intentos restantes, y leo una letra. Si esa letra forma parte de palabraSecreta y no de palabra\[\] entonces la revelo. 
+3. Siempre que se haya acertado una letra, se compara palabraSecreta con palabra\[\] (podemos convertir el contenido del array a String con el método String.copyValueOf()). Si son iguales, la palabra ha sido revelada y ponemos fin a TRUE. Si no se ha acertado la letra, la apuntamos en vLetras y aumentamos el contador de fallos. 
+4. El último bloque verifica si la partida ha terminado porque la variable fin era TRUE, lo que significaría una victoria. Si hemos llegado hasta ahí y todavía vale false, es una derrota. Mostramos los mensajes adecuados y devolvemos el valor de fin.
 
 **Compilación y ejecución**  
 ![](images/captura-de-pantalla-2021-01-31-a-las-18.46.08.png) 
