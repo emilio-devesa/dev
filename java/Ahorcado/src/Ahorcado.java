@@ -4,10 +4,8 @@ import java.util.Random;
 
 /**
  * Sencilla implementación del juego del ahorcado en Java.
- * <a href="https://emiliodevesa.wordpress.com/2021/01/31/java-el-ahorcado/">Blog
- * post</a>
  *
- * @author Emilio Devesa (http://emiliodevesa.wordpress.com)
+ * @author Emilio Devesa
  * @version 0.1
  */
 public class Ahorcado {

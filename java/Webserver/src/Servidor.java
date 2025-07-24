@@ -7,10 +7,8 @@ import java.util.logging.Logger;
 
 /**
  * Un sencillo servidor web multihilo creado en java
- * <a href="https://emiliodevesa.wordpress.com/2013/06/05/un-servidor-web-sencillo-en-java/">Blog
- * post</a>
  *
- * @author Emilio Devesa (http://emiliodevesa.wordpress.com)
+ * @author Emilio Devesa
  * @version 0.1
  */
 public class Servidor {
@@ -45,7 +43,7 @@ public class Servidor {
  * Una clase que modela el hilo con el que se procesa cada petición y su
  * correspondiente respuesta, así como el manejo de diferentes excepciones
  *
- * @author Emilio Devesa (http://emiliodevesa.wordpress.com)
+ * @author Emilio Devesa
  * @version 0.1
  */
 class HiloTrabajo extends Thread {
