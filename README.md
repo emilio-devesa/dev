@@ -27,7 +27,6 @@ More info: https://emiliodevesa.wordpress.com/2023/07/15/ushell-para-macos/
 ### JAVA
 
 * Ahorcado: Simple implementation of the game 'Ahorcado' (Hangman)
-https://emiliodevesa.wordpress.com/2021/01/31/java-el-ahorcado/
 
 * Amigos: Small example to illustrate what classes and objects are all about
 https://emiliodevesa.wordpress.com/2010/09/29/java-ejemplo-de-clase-objeto/
