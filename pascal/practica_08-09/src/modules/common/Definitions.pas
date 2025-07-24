@@ -3,9 +3,6 @@ module Definitions;
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
 
-    Emilio Devesa
-    https://emiliodevesa.wordpress.com/
-
     Definitions.pas
     Provides definitions for constants and types
 }
@@ -15,9 +12,10 @@ export  Definitions = (
             tPersonalInfo,
             tStudent,
             tStudentList,
-            tExamPeriod,
             tGrade,
-            tExamRecord
+            tExamRecord,
+            tStudentGrades,
+            tGradesList
 );
 
 const   MAX_ITEMS = 100;
@@ -46,15 +44,13 @@ type    tPersonalInfo = String (50);
             global: real value 0.0;
         end;
 
-        tExamPeriod = (epFebruary, epJune, epSeptember, epDecember);
-
         tStudentGrades = record
             login: tPersonalInfo;
-            grades: array [tExamPeriod] of tExamRecord;
+            grades: array [1 .. 4] of tExamRecord;
         end;
 
         tGradesList = record
-            list: array [1 .. MAX_ITEMS] of tStudentGrades;
+            item: array [1 .. MAX_ITEMS] of tStudentGrades;
             count: integer value 0
         end;
 

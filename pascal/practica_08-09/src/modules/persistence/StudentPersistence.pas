@@ -3,9 +3,6 @@ module StudentPersistence;
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
 
-    Emilio Devesa
-    https://emiliodevesa.wordpress.com/
-
     StudentPersistence.pas
     Provides file persistence for the student list using a binary file.
 }

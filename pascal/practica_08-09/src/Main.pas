@@ -2,9 +2,6 @@ program Main;
 {   Práctica 2008-2009
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
-
-    Emilio Devesa
-    https://emiliodevesa.wordpress.com/
 }
 
 import
@@ -13,6 +10,7 @@ import
     Operations qualified;
     ConfigurationController qualified;
     StudentController qualified;
+    GradesController qualified;
     ListController qualified;
 
 
@@ -84,10 +82,12 @@ begin
     writeln('============================');
     ConfigurationController.load;
     StudentController.loadStudents;
+    GradesController.loadGrades;
 	repeat
     until (start(mainMenu) = 0);
     writeln;
     StudentController.saveStudents;
+    GradesController.saveGrades;
     Operations.WaitForEnter;
     Operations.ClearScreen;
 end.

@@ -3,9 +3,6 @@ module StudentController;
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
 
-    Emilio Devesa
-    https://emiliodevesa.wordpress.com/
-
     StudentController.pas
     Provides the controller for the student model
 }

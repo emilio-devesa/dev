@@ -3,22 +3,23 @@ module GradesModel;
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
 
-    Emilio Devesa
-    https://emiliodevesa.wordpress.com/
-
     GradesModel.pas
     Provides the model for the grades
 }
 
 export	GradesModel = (
             setLogin,
-            getLogin
+            getLogin,
+            setExamRecord,
+            getExamRecord
 );
 
-import  Types qualified;
+import  Definitions;
 
-procedure setLogin(var s: Types.tStudentGrades; l: Types.tPersonalInfo);
-function getLogin(s: Types.tStudentGrades): Types.tPersonalInfo;
+procedure setLogin(var s: tStudentGrades; l: tPersonalInfo);
+function getLogin(s: tStudentGrades): tPersonalInfo;
+procedure setExamRecord(var s: tStudentGrades; idx: integer; rec: tExamRecord);
+function getExamRecord(s: tStudentGrades; idx: integer): tExamRecord;
 
 
 end;
@@ -32,6 +33,16 @@ end;
 function getLogin;
 begin
 	getLogin := s.login;
+end;
+
+procedure setExamRecord;
+begin
+    s.grades[idx] := rec;
+end;
+
+function getExamRecord;
+begin
+    getExamRecord := s.grades[idx];
 end;
 
 

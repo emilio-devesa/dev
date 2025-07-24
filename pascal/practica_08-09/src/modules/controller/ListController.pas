@@ -3,9 +3,6 @@ module ListController;
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
 
-    Emilio Devesa
-    https://emiliodevesa.wordpress.com/
-
     ListController.pas
     Provides the controller for lists
 }

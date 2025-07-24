@@ -3,9 +3,6 @@ module ListSort;
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
 
-    Emilio Devesa
-    https://emiliodevesa.wordpress.com/
-
     ListSort.pas
     Provides an implementation of the quicksort algorithm to sort lists of students or grades
 }

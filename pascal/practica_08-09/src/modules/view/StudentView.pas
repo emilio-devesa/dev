@@ -3,9 +3,6 @@ module StudentView;
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
 
-    Emilio Devesa
-    https://emiliodevesa.wordpress.com/
-
     StudentView.pas
     Provides the view for printing or reading a student's personal information
 }

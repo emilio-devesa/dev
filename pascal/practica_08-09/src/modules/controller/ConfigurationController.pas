@@ -3,9 +3,6 @@ module ConfigurationController;
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
 
-    Emilio Devesa
-    https://emiliodevesa.wordpress.com/
-
     ConfigurationController.pas
     Provides a controller for configuration values
 }

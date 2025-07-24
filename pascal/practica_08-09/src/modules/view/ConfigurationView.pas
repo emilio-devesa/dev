@@ -3,9 +3,6 @@ module ConfigurationView;
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
 
-    Emilio Devesa
-    https://emiliodevesa.wordpress.com/
-
     ConfigurationView.pas
     Provides a view for persistent configuration values
 }

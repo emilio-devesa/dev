@@ -3,9 +3,6 @@ module ConfigurationPersistence;
     Command Line program written in Pascal ISO 10206 (Extended Pascal).
     More info: README.md
 
-    Emilio Devesa
-    https://emiliodevesa.wordpress.com/
-
     ConfigurationPersistence.pas
     Provides file persistence for the configuration values using a binary file.
 }
