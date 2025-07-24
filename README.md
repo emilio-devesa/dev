@@ -35,7 +35,6 @@ https://emiliodevesa.wordpress.com/2010/09/29/java-ejemplo-de-clase-objeto/
 https://emiliodevesa.wordpress.com/2013/05/24/concesionario-programa-de-ejemplo-en-java/
 
 * ConwaysConstant: Implementation of the Look and Say sequence
-https://emiliodevesa.wordpress.com/2023/08/22/look-and-say-conways-constant/
 
 * JavaSQL: How to access MySQL databases from a Java application
 https://emiliodevesa.wordpress.com/2012/11/16/tutorial-mysql/
