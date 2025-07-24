@@ -44,7 +44,6 @@ https://emiliodevesa.wordpress.com/2012/12/28/java-y-consultas-a-mysql-ii/
 https://emiliodevesa.wordpress.com/2012/11/21/modificar-y-eliminar-en-mysql/
 
 * ProducerConsumer: Small program that produces and consumes information avoiding interlock
-https://emiliodevesa.wordpress.com/2022/07/11/problema-productor-consumidor-java/
 
 * TresEnRaya: Simple implementation of the game 'Tres En Raya' (Tic-Tac-Toe)
 
