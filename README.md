@@ -51,7 +51,6 @@ https://emiliodevesa.wordpress.com/2022/07/11/problema-productor-consumidor-java
 https://emiliodevesa.wordpress.com/2021/02/16/java-tres-en-raya/
 
 * Webserver: Simple multithread webserver
-https://emiliodevesa.wordpress.com/2013/06/05/un-servidor-web-sencillo-en-java/
 
 
 ### PASCAL
